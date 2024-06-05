@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
 import { FaMapMarker } from 'react-icons/fa';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 
 const JobListing = ({ job }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
-  let description = job.description;
-  if (!showFullDescription) {
-    description = description.substring(0, 90) + '...';
-  }
+  const description = useMemo(() => {
+    if (!showFullDescription) {
+      return job.description.substring(0, 90) + '...';
+    }
+    return job.description;
+  }, [showFullDescription, job.description]);
 
   return (
     <div className="bg-white rounded-xl shadow-md relative" key={job.id}>
