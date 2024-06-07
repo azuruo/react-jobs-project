@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import { Link } from 'react-router-dom';
+import logo from '../assets/images/logo.png';
 
 const NavBar = () => {
   return (
@@ -11,11 +11,7 @@ const NavBar = () => {
               className="flex flex-shrink-0 items-center mr-4"
               to="/index.html"
             >
-              <img
-                className="h-10 w-auto"
-                src={ logo }
-                alt="React Jobs"
-              />
+              <img className="h-10 w-auto" src={logo} alt="React Jobs" />
               <span className="hidden md:block text-white text-2xl font-bold ml-2">
                 React Jobs
               </span>
