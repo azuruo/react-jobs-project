@@ -1,4 +1,16 @@
+import { useState } from "react";
+
 const AddJobPage = () => {
+    const [title, setTitle] = useState("");
+    const [type, setType] = useState("");
+    const [location, setLocation] = useState("");
+    const [description, setDescription] = useState("");
+    const [salary, setSalary] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [companyDescription, setCompanyDescription] = useState("");
+    const [contactEmail, setContactEmail] = useState("");
+    const [contactPhone, setContactPhone] = useState("");
+
   return (
     <section className="bg-indigo-50">
       <div className="container m-auto max-w-2xl py-24">
@@ -18,6 +30,8 @@ const AddJobPage = () => {
                 name="type"
                 className="border rounded w-full py-2 px-3"
                 required
+                value = {type}
+                onChange = {(e) => setType(e.target.value)}
               >
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
